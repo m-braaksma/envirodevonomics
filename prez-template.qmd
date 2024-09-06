@@ -1,0 +1,47 @@
+---
+title: "Title"
+date: 09/10/2024
+format: 
+    revealjs:
+        slide-number: true
+        show-slide-number: print
+---
+
+## Motivation
+
+
+## Research Question 
+
+
+## Overview 
+
+
+## Data
+
+- Details 
+
+# Data 
+
+- Maps, descriptives
+
+# Empirical Strategy 
+
+- econometrics
+
+# Emirical Strategy
+
+- equation 
+
+# Results 
+
+- screenshot
+
+# Results
+
+- screenshot 
+
+# Summary 
+
+
+
+
