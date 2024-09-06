@@ -1,9 +1,9 @@
 ---
-title: "Title"
-subtitle: 'APEC 8990: Environment and Development Economics'
+title: 'Title'
+subtitle: 'Subtitle'
 author: 
-    name: "original authors"
-    affiliations: University of Minnesota
+    name: Original Authors
+    affiliations: Affiliation
 date: 09/10/2024
 date-format: long
 format: 
