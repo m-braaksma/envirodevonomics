@@ -1,12 +1,21 @@
 ---
-title: "Agricultural Productivity and Deforestation: Evidence from Brazil"
-author: "Szerman, Assuncao, Lipscomb, and Mobarak"
+title: 'Agricultural Productivity and Deforestation'
+subtitle: 'Evidence from Brazil'
+author: 
+    name: Szerman, Assuncao, Lipscomb, and Mobarak
+    affiliations: Affiliation
 date: 09/10/2024
-author: "original authors"
+date-format: long
 format: 
-    revealjs:
-        slide-number: true
-        show-slide-number: print
+    clean-revealjs:
+        embed-resources: true
+        incremental: false
+        title-slide-attributes: 
+            data-background-image: assets/UMN9_M-1line-blk.png
+            data-background-size: 25%
+            data-background-position: 4% 97%
+        html-math-method: katex
+        scrollable: true
 ---
 
 ## Motivation
