@@ -11,7 +11,7 @@ format:
         embed-resources: true
         incremental: false
         title-slide-attributes: 
-            data-background-image: UMN9_M-1line-blk.png
+            data-background-image: assets/UMN9_M-1line-blk.png
             data-background-size: 25%
             data-background-position: 4% 97%
         html-math-method: katex
