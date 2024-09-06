@@ -1,8 +1,8 @@
 ---
-title: "Title"
-author: "original authors"
+title: "Agricultural Productivity and Deforestation: Evidence from Brazil"
+author: "Szerman, Assuncao, Lipscomb, and Mobarak"
 date: 09/10/2024
-date-format: long
+author: "original authors"
 format: 
     revealjs:
         slide-number: true
@@ -43,7 +43,3 @@ format:
 - screenshot 
 
 ## Summary 
-
-
-
-
