@@ -1,9 +1,9 @@
 ---
 title: 'Title'
-subtitle: 'Subtitle'
+subtitle: 'Authors'
 author: 
-    name: Original Authors
-    affiliations: Affiliation
+    name: APEC 8990
+    affiliations: Paper Presentations
 date: 09/10/2024
 date-format: long
 format: 

@@ -1,9 +1,9 @@
 ---
-title: 'Agricultural Productivity and Deforestation'
-subtitle: 'Evidence from Brazil'
+title: 'Agricultural Productivity and Deforestation: Evidence from Brazil'
+subtitle: Szerman, Assuncao, Lipscomb, and Mobarak
 author: 
-    name: Szerman, Assuncao, Lipscomb, and Mobarak
-    affiliations: Affiliation
+    name: APEC 8990
+    affiliations: Paper Presentations
 date: 09/10/2024
 date-format: long
 format: 
