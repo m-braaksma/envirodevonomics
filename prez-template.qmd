@@ -1,6 +1,7 @@
 ---
 title: "Title"
 date: 09/10/2024
+author: "original authors"
 format: 
     revealjs:
         slide-number: true
@@ -20,27 +21,27 @@ format:
 
 - Details 
 
-# Data 
+## Data 
 
 - Maps, descriptives
 
-# Empirical Strategy 
+## Empirical Strategy 
 
 - econometrics
 
-# Emirical Strategy
+## Emirical Strategy
 
 - equation 
 
-# Results 
+## Results 
 
 - screenshot
 
-# Results
+## Results
 
 - screenshot 
 
-# Summary 
+## Summary 
 
 
 
