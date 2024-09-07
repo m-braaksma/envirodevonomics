@@ -2,7 +2,6 @@
 title: "Agricultural Productivity and Deforestation: Evidence from Brazil"
 author: "Szerman, Assuncao, Lipscomb, and Mobarak"
 date: 09/10/2024
-author: "original authors"
 format: 
     revealjs:
         slide-number: true
@@ -14,9 +13,15 @@ format:
 
 ## Research Question 
 
+> What is the effect of agricultural productivity on deforestation?
 
 ## Overview 
 
+- Intervention:
+- Data: 
+- Method:
+- Findings:
+  - 
 
 ## Data
 
