@@ -1,10 +1,10 @@
 ---
-title: 'Agricultural Productivity and Deforestation: Evidence from Brazil'
-subtitle: Szerman, Assuncao, Lipscomb, and Mobarak
+title: 'Does the Effect of Pollution on Infant Mortality Differ Between Developing and Developed Countries? Evidence from Mexico City'
+subtitle: Arceo-Gomez, Hanna and Oliva
 author: 
     name: APEC 8990
     affiliations: Paper Presentations
-date: 09/10/2024
+date: 09/12/2024
 date-format: long
 format: 
     clean-revealjs:
@@ -23,15 +23,9 @@ format:
 
 ## Research Question 
 
-> What is the effect of agricultural productivity on deforestation?
 
 ## Overview 
 
-- Intervention:
-- Data: 
-- Method:
-- Findings:
-  - 
 
 ## Data
 

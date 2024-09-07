@@ -1,12 +1,21 @@
 ---
-title: "Title"
-author: "original authors"
+title: 'Title'
+subtitle: 'Authors'
+author: 
+    name: APEC 8990
+    affiliations: Paper Presentations
 date: 09/10/2024
 date-format: long
 format: 
-    revealjs:
-        slide-number: true
-        show-slide-number: print
+    clean-revealjs:
+        embed-resources: true
+        incremental: false
+        title-slide-attributes: 
+            data-background-image: assets/UMN9_M-1line-blk.png
+            data-background-size: 25%
+            data-background-position: 4% 97%
+        html-math-method: katex
+        scrollable: true
 ---
 
 ## Motivation

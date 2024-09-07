@@ -1,0 +1,166 @@
+---
+title: 'Paper Presentation'
+subtitle: 'APEC 8990: Environment and Development Economics'
+author: 
+    name: 'Matt Braaksma'
+    affiliations: University of Minnesota
+date: 09/05/2024
+date-format: long
+format: 
+    clean-revealjs:
+        embed-resources: true
+        incremental: false
+        title-slide-attributes: 
+            data-background-image: assets/UMN9_M-1line-blk.png
+            data-background-size: 25%
+            data-background-position: 4% 97%
+        html-math-method: katex
+        scrollable: true
+---
+
+
+## Motivation
+
+- Poverty eradication and global warming are enormous challenges facing the global community 
+    - Issues are inter-linked
+
+- Climate change is known to hinder poverty eradication efforts
+    - But how does poverty eradication impact the environment?
+
+
+## Poverty alleviation and local environmental degradation: An empirical analysis in Colombia
+
+### Daniele Malerba
+
+- Explores the causal link between poverty reduction at the household level and environmental impact at the local (municipal) level
+
+- Cash transfer program in Colombia increases consumption at the household level
+
+- Unexpectedly, this does not increase deforestation in the municipality
+
+
+
+<!-- ## Lit Review (optional) -->
+
+## Background
+
+- *Familias en Acción* (FA) in Colombia
+    - conditional cash transfer program
+
+- Eligibility determined in a two step process
+    1. Target municipalities^[Criteria: provision of appropriate documentation, the presence of at least one bank, the presence of facilities able to provide access to basic education and healthcare, and a population size of <100,000 inhabitants]
+    2. Target households^[Criteria: poorest 20% of families with children between 0 and 17 years of age, and required to register and to comply with the conditions of the program]
+        - Included health, nutrition and education stipulations to remain eligible
+
+## Data
+
+:::: {.columns}
+
+::: {.column width="40%"}
+### Household data
+
+- FA program evaluation
+    - Three waves: 2002, 2003 and 2005/6
+:::
+
+::: {.column width="50%"}
+### Municipal Data
+
+- Institute of Hydrology, Meteorology and Environmental Studies 30m Forest Cover
+    - 2000, 2005
+- Open-Data Inventory for Anthropogenic CO~2~ 1km monthly emissions
+    - 2000, 2005
+:::
+
+::::
+
+
+
+
+
+## Empirical Strategy
+
+### Household effects
+
+$$
+\delta Y_i = \alpha + \delta * T_i + X_i + \epsilon_i
+$$
+
+::: {style="font-size: 60%;"}
+
+where $\delta Y_i$ represents the difference in outcome between the two periods, and $X_i$ are baseline variables used for regression adjustment. The coefficient d represents the DID estimate.
+
+:::
+
+- Outcome variable: number of weekly days of beef/milk consumption, refrigerator ownership
+- Uses inverse probability treatment weighting and sampling weights
+
+### Municipal effects
+
+$$
+y_{it} = \beta_0 + \beta_1 *Treat_i + \beta_2 * Post_t + \beta_3 * (Treat_i * Post_t) + \beta_4 X_{it} + \epsilon_{it}
+$$
+
+::: {style="font-size: 60%;"}
+
+where $y_{it}$ is the outcome of interest, such as deforestation in municipality $i$ in year $t$; $Treat_i$ is equal to 1 if the municipality enrolled by 2004 and 0 otherwise; $Post_t$ is equal to 1 for the period after treatment (in this case 2005), and zero for 2000.
+
+:::
+
+- municipality and year fixed effects
+
+## Results
+### Household Level
+
+![](assets/prez-lecture-2-240905/table4.png)
+
+::: {style="font-size: 80%;"}
+- FA has a positive and significant effect:
+    - Beef consumption
+    - Milk consumption
+    - Refrigerator ownership
+- Interaction effect with market distance is negative and significant:
+    - Refrigerator ownership
+:::
+
+## Results
+### Municipal Level
+
+![](assets/prez-lecture-2-240905/table6.png)
+
+::: {style="font-size: 80%;"}
+- Municipalities enrolled in FA:
+    - Less deforestation
+    - Statistically insignificant when reforestation is included
+:::
+
+## Results
+### Municipal Level
+
+![](assets/prez-lecture-2-240905/table7.png)
+
+
+
+## Summary
+
+- CCT increases the consumption of land-intensive goods and the ownership of energy-intensive assets at the household level
+    - Proximity to market matters
+- Participating municipalities experienced less deforestation
+    - But no difference in emissions
+
+- Policy Implications
+    - Environmental impacts of poverty alleviation may be smaller than expected
+    - Relationship between poverty alleviation and energy consumption is complex
+    - Contextual and local factors matter
+
+
+<!-- Best Practices:
+- 1 minute per slide
+- Avoid chart junk
+- One line bullets
+- No need for full sentences
+- Vary text slides and text + image slides
+- Don’t put too many equations
+- Save details for speaking, or talk “about’ ’ equation
+- Summarize findings again at the end -->
+
