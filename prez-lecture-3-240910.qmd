@@ -18,43 +18,130 @@ format:
         scrollable: true
 ---
 
+<!-- Paper: https://elischolar.library.yale.edu/cgi/viewcontent.cgi?article=2090&context=egcenter-discussion-paper-series -->
+
 ## Motivation
 
+- 90% of forest loss in tropics due to agricultural expansion (Curtis et al., 2018)
+- Tradeoff for development: Increase agricultural productivity leads to loss in biodiversity
+- Does development through agricultural expansion neccessitate environmental degradatation?
 
 ## Research Question 
 
 > What is the effect of agricultural productivity on deforestation?
 
+![](assets/prez-lecture-3-240910/deforestation.jpg)
+
 ## Overview 
 
-- Intervention:
-- Data: 
-- Method:
+- Intervention: rural electrification through hydropower
+- Data: Brazil 1960 -- 2000 of census data and satellite images
+- Method: IV for counterfactual electricity grid that minimizes construction costs
 - Findings:
-  - 
+  - Electrification increased crop yields
+  - Credit-constrained farmers switched from cattle-grazing (land intensive) to cropping
+  - Total agricultural land use decreased (increased efficiency)
+  - Increased protection of native vegetation $\to$ reduced deforestation (ecostyem preservation)
 
 ## Data
 
-- Details 
-
-## Data 
-
-- Maps, descriptives
+- Brazil 1960 -- 2000
+- 2,172 standardized counties
+1. Historical measures of electricity infrastructure by decade
+   - 4% of farms have electricty in 1970. 10 fold increase in 1995
+   - 32,578 spaced grids (Lipscomb et al., 2013)
+2. Brazilian Censuses of Agriculture (5 waves): 
+   - farm expansion, land use, output, inputs
+   - 3 land-types: cropland, pastures, native vegetation
+3. LANDSAT Land use via satellite images
+   - 30m x 30m for 30 land use types
+- Issue: This is a paper about land use. There is not a single map...
 
 ## Empirical Strategy 
 
-- econometrics
+Farmer's problem: 
+
+Max profits using crop $H_c$ or pasture $H_g$ lands given resource $M$ and land $H$ allocations.
+
+- Cattle grazing = land intensive
+- Crop cultivation = capital intensive
+
+$$
+\max_{F, H_c, H_g} \Omega K F(H_c) + F(H_g) - rK - p(H_c + H_g)
+$$
+$$
+\text{ s.t. } rK + p(H_c + H_g) \le M 
+$$
+$$
+H_c + H_g \le H
+$$
+
+## Empirical Strategy
+
+
+
+$H_v$: Total land endowment - farmer's agricultural demand
+
+$$
+H_v = \bar{H} - \int_{-\infty}^{\bar{\theta}} (H_c^* + H_g^*) d \Gamma (\theta)
+$$
+
+Predictions: Increase or decrease of native vegetation depends on: 
+
+- Intensive margin ($>0$): electrifiation impact on land demand (1st term)
+- Extensive margin ($><0$): opportunity cost to farming (2nd term)
+ 
+$$
+\frac{d H_v}{d \Omega} = - \frac{d(H_c^* + H_g^*)}{d \Omega} \Gamma (\bar{\theta}) - (H_c^* + H_g^*) \Gamma (\bar{\theta}) \frac{d \bar{\theta}}{d \Omega}
+$$
 
 ## Emirical Strategy
 
-- equation 
+
+- IV: counterfactual electricity grid (Lipscomb et al. 2013)
+  - Electricity expansion in Brazil is mainly hydropower
+  - Costs are mainly topographical: water flow, river gradient
+  - Exclusion restriction: "discontinuous jumps in receiving power early-versus-late are unlikely to be directly related to the continuous evolution of farmland expansion, pasture-to-cropland conversion, and deforestation"
+
+## Emirical Strategy
+
+$$
+E_{c,t} = \alpha_c^1 + \gamma_t^1 + \delta Z_{c,t} + \theta^1 X_{c,t} + \eta_{ct}
+$$
+$$
+Y_{c,t+1} = \alpha_c^2 + \gamma_t^2 + \beta \hat{E}_{c,t} + \theta^2 X_{c,t} + \varepsilon_{ct}
+$$
+
+- $\beta$: Outcome of interest for impact of electricity access
+- $\delta$: Instrument using hydropower
+- Time and country fixed effects. 
+- Clustered errors by county
 
 ## Results 
 
-- screenshot
+![](assets/prez-lecture-3-240910/table-5.png)
+
+F-stat: 24.6
 
 ## Results
 
-- screenshot 
+![](assets/prez-lecture-3-240910/table-7.png)
+
+## Results
+
+![](assets/prez-lecture-3-240910/table-8.png)
+
+## Results
+
+![](assets/prez-lecture-3-240910/table-9.png)
 
 ## Summary 
+
+Borlaug's hypothesis (yield intensification) vs. Boserup's hypothesis (expand land cultivation)
+
+- Sharing vs. sparing debate
+- Study supports Borlaug's hypothesis
+
+> “One potential way to reduce [environmental impacts from agriculture] is
+to increase food production per unit area on existing farmland, so as to
+minimize farmland area and to spare land for habitat conservation” (Phalan et al. 2016)
