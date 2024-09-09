@@ -18,9 +18,9 @@ format:
         scrollable: true
 ---
 
-<!-- Paper: https://elischolar.library.yale.edu/cgi/viewcontent.cgi?article=2090&context=egcenter-discussion-paper-series -->
-
 ## Motivation
+
+<!-- Paper: https://elischolar.library.yale.edu/cgi/viewcontent.cgi?article=2090&context=egcenter-discussion-paper-series -->
 
 - 90% of forest loss in tropics due to agricultural expansion (Curtis et al., 2018)
 - Tradeoff for development: Increase agricultural productivity leads to loss in biodiversity
