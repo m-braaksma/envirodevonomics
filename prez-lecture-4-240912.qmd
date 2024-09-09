@@ -26,6 +26,8 @@ format:
 - Air pollution is a significant issue many parts of the world
 - Studies have estimated the health effects of pollution in developed countries
 - Reason to believe this evidence may not be externally valid for developing countries
+    - There may be a non-linear dose–response relationship between pollution and infant mortality 
+    - The effect of pollution on health may be highly dependent on behavior
 :::
 
 ::: {.column width="40%"}
@@ -47,23 +49,27 @@ format:
     - Evidence that pollution increases infant mortality
     - Compared to the US, larger marginal effects for CO and similar marginal effects for PM~10~
 - Concern: other factors may be correlated with health
-    - weather, socio-economic status and changes in economic conditions
+    - Weather, socio-economic status and changes in economic conditions
+
+![](assets/prez-lecture-4-240912/figure1.png)
+
 
 ## Data
 ### Mexico City 1997 – 2006
-### 
 
-1. Neonatal and infant mortality
-    - 
+1. Neonatal^[Children that are 28 days and younger] and infant mortality^[Children that are one year and younger] data from the Ministry of Health
+    - Annual neonatal mortality rate: 1,183 (compared to 460 in US)
+    - Annual infant mortality rate: 1,986 (compared to 698 in US)
 
-2. Pollution
-    - 
+2. Pollution data from Automatic Network of Atmospheric Monitoring (RAMA)
+    - PM~10~ 24-hour concentration: 67 $\mu$ m
+    - CO 8 hour concentration: 2,707.56 ppb
 
-3. Thermal inversions
-    - 
+3. Thermal inversion data from Meteorological Unit of the local Ministry of Environment
+    - Number of inversions in a week: 1.68
 
-4. Temperature and weather
-    - 
+4. Temperature and weather data from RAMA
+    - Used as controls
 
 
 ## Empirical Strategy 
@@ -119,27 +125,36 @@ Y_{mw} &= \beta_0 + \beta_1 P_{mw} + \sum \beta_{2m} w + h(W_{mw}) + \alpha_m + 
 $$
 
 Concerns:
+- Residual seasonal variation
+- Short time frame (such as week) may overstate the effect
 - Exclusion restriction 
-- residual seasonal variation
-- Another concern is that models that estimate the effect of pollution on infant death within a short time frame, such as week, overstate the effect.
-- 
-
-
-## Results 
-### Fixed Effects
-
-![](assets/prez-lecture-4-240912/table3.png)
-
+- Single instrument for all pollutants
 
 ## Results {.nostretch}
 ### IV First Stage
 
 ![](assets/prez-lecture-4-240912/figure5.png){width="150%"}
 
-## Results
+## Results 
+### IV First Stage
+
+![](assets/prez-lecture-4-240912/table2.png)
+
+## Results 
 ### IV
 
+![](assets/prez-lecture-4-240912/table3.png)
+
+
+## Results
+### IV, Cause of Death
+
 ![](assets/prez-lecture-4-240912/table4.png)
+
+## Results
+### IV, Multiple Pollutants
+
+![](assets/prez-lecture-4-240912/table5.png)
 
 ## Results
 ### Comparison with US
@@ -149,6 +164,11 @@ Concerns:
 ## Summary 
 
 - Statistically significant effects of pollution on infant mortality
+- Compared to US:
+    - Larger effects for CO
+    - Comparable estimates for PM~10~, despite much higher levels
+- Policy decisions need to consider the different effects in developing countries
+    - May understate the benefits from environmental regulation
 
 
 
