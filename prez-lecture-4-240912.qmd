@@ -23,7 +23,7 @@ format:
 :::: {.columns}
 
 ::: {.column width="60%"}
-- Air pollution is a significant issue many parts of the world
+- Air pollution is a significant issue in many parts of the world
 - Studies have estimated the health effects of pollution in developed countries
 - Reason to believe this evidence may not be externally valid for developing countries
     - There may be a non-linear dose–response relationship between pollution and infant mortality 
@@ -56,10 +56,13 @@ format:
 
 ## Data
 ### Mexico City 1997 – 2006
+<!-- 1. Neonatal^[Children that are 28 days and younger] and infant mortality^[Children that are one year and younger] data from the Ministry of Health -->
 
-1. Neonatal^[Children that are 28 days and younger] and infant mortality^[Children that are one year and younger] data from the Ministry of Health
+1. Neonatal and infant mortality data from the Ministry of Health
     - Annual neonatal mortality rate: 1,183 (compared to 460 in US)
+      - Children that are 28 days and younger
     - Annual infant mortality rate: 1,986 (compared to 698 in US)
+      - Children that are one year and younger
 
 2. Pollution data from Automatic Network of Atmospheric Monitoring (RAMA)
     - PM~10~ 24-hour concentration: 67 $\mu$ m
@@ -125,6 +128,7 @@ Y_{mw} &= \beta_0 + \beta_1 P_{mw} + \sum \beta_{2m} w + h(W_{mw}) + \alpha_m + 
 $$
 
 Concerns:
+
 - Residual seasonal variation
 - Short time frame (such as week) may overstate the effect
 - Exclusion restriction 
