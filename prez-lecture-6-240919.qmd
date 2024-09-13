@@ -23,17 +23,15 @@ format:
 :::: {.columns}
 
 ::: {.column width="60%"}
-- Air pollution is a significant issue in many parts of the world
-- Studies have estimated the health effects of pollution in developed countries
-- Reason to believe this evidence may not be externally valid for developing countries
-    - There may be a non-linear dose–response relationship between pollution and infant mortality 
-    - The effect of pollution on health may be highly dependent on behavior
+- Air quality is poor in developing countries and has negative health and economic consequences
+- However, poor air quality may actually be optimal if WTP is low
+- Limited empirical evidence of WTP for clean air
 :::
 
 ::: {.column width="40%"}
 
 ### Research Question 
-> What is the effect of pollution on infant mortality in the context of a developing country?
+> What is the willingness to pay for clean air?
 :::
 
 ::::
@@ -41,138 +39,147 @@ format:
 
 ## Overview 
 
-- Context: Mexico 1997 – 2006
-    - Rapidly industrializing during this time period
-    - Also implemented policies aimed at improving air quality
-- Methods: fixed effects and IV using thermal inversions
+- Context: China 2006-2014
+    - Developing country with poor air quality
+- Methods:     
+    - Spatial RDD based on Huai River heating policy
+    - Product fixed effects and city fixed effects
+    - Distance to plant IV to capture variation in transportation cost, which is a supply-side cost shifter
 - Findings: 
-    - Evidence that pollution increases infant mortality
-    - Compared to the US, larger marginal effects for CO and similar marginal effects for PM~10~
-- Concern: other factors may be correlated with health
-    - Weather, socio-economic status and changes in economic conditions
-
-![](assets/prez-lecture-4-240912/figure1.png)
+    - Households have a high WTP for air quality, but heterogeneity exists by income and information
 
 
 ## Data
-### Mexico City 1997 – 2006
-<!-- 1. Neonatal^[Children that are 28 days and younger] and infant mortality^[Children that are one year and younger] data from the Ministry of Health -->
+### China City 2006-2014
 
-1. Neonatal and infant mortality data from the Ministry of Health
-    - Annual neonatal mortality rate: 1,183 (compared to 460 in US)
-      - Children that are 28 days and younger
-    - Annual infant mortality rate: 1,986 (compared to 698 in US)
-      - Children that are one year and younger
-
-2. Pollution data from Automatic Network of Atmospheric Monitoring (RAMA)
-    - PM~10~ 24-hour concentration: 67 $\mu$ m
-    - CO 8 hour concentration: 2,707.56 ppb
-
-3. Thermal inversion data from Meteorological Unit of the local Ministry of Environment
-    - Number of inversions in a week: 1.68
-
-4. Temperature and weather data from RAMA
-    - Used as controls
+1. Air purifier sales transaction data
+    - ratio of HEPA purifier sales relative to non-HEPA purifier sales: 
+        - 1.2 for southern consumers compared to 2.0 for northern consumers
+2. City-level annual average PM~10~
+3. City-year measures on population, urban population, and GDP per capita
+4. Location data for cities
+    - Distance to Huai River and factory or importing port locations of air purifiers
 
 
-## Empirical Strategy 
-### Fixed Effects
+## Demand for Air Purifiers {.smaller}
+### Random Utility Model
 
-Objective: estimate $\beta_1$ the relationship between pollution ($P_{mw}$) in a municipality ($m$) in a given week ($w$) and mortality per 100,000 live births ($Y_{mw}$)
-$$
-Y_{mw} = \beta_0 + \beta_1 P_{mw} + \alpha_m + \sigma_{mj} + \epsilon_{mw}
-$$
+- Consumer $i$ in city $c$ can purchase air purifier $j$ at price $p_{jc}$ to reduce indoor air pollution by $x_{jc} = x_c \cdot e_j$
+- Purifier $j$’s effectiveness at reducing indoor particulate matter $e_j \in [0,1]$
+- Observe markets for $c = 1,...,C$ cities with $i=1,...,I_c$ consumers
 
-- $\alpha_m$ is a set of municipality fixed effects that control for permanent differences across municipalities
-- $\sigma_{mj}$ is a set of bimonthly x municipality fixed effects, which control for common factors in a given two month block that could affect both pollution levels and infant mortality within a municipality
-
-## Empirical Strategy 
-### Fixed Effects
+Then the conditional indirect utility of consumer $i$ from purchasing air purifier $j$ at city $c$ is
 
 $$
-Y_{mw} = \beta_0 + \beta_1 P_{mw} + \alpha_m + \sigma_{mj} + \epsilon_{mw}
+u_{ijc} = \beta_i x_{jc} + \alpha_i \rho_{jc} + \eta_j + \lambda_c + \xi_{jc} + \epsilon_{ijc}
 $$
 
-Concerns:
+where $x_{jc}$ represents the improvements in indoor air quality conditional
+on the purchase of product $j$, $\rho_{jc}$ represents the price of product $j$ in market $c$, $\eta_j$ represents product fixed effects that capture utility gains from unobserved and observed product characteristics, $\lambda_c$ represents city fixed effects, $\xi_{jc}$ represents a product-city specific demand shock, and $\epsilon_{ijc}$ represents a mean-zero stochastic term.
 
-- Unobserved, *time-varying* differences across municipalities will bias $\beta_1$
-- Classical measurement error in the pollution variable will bias $\beta_1$ downwards
+- $\beta_i$: marginal utility for clean air
+- $\alpha_i$: marginal disutility of price
 
-## Empirical Strategy
-### Instrumental Variables
+## Demand for Air Purifiers {.smaller}
+### Logit Model
 
-Objective: test whether inversions increase the concentrations of
-different types of pollutants $\rightarrow$ use the number of thermal inversions in a given week ($TI_w$) to instrument for pollution
+Assuming that $\beta_i$ = $\beta$ and $\alpha_i$ = $\alpha$ for
+consumer $i$ and that the error term is distributed as a type I extreme value
+function, then consumer $i$ purchases purifier $j$ if $u_{ijc} > u_{ikc}$ for $\forall k \ne j$. Then the market share for product $j$ in city $c$ is
+
+$$
+s_{jc} = \frac{\exp \left( \beta x_{jc} + \alpha p_{jc} + \eta_j + \lambda_c + \xi_{jc} \right)}{\sum_{k=0}^{J} \exp \left( \beta x_{kc} + \alpha p_{kc} + \eta_k + \lambda_c + \xi_{kc} \right)}
+$$
+
+which simplifies to 
 
 $$
 \begin{align*}
-P_{mw} &= \pi_0 + \pi_1 TI_w + \sum \pi_{2m} w + h(W_{mw}) + \alpha_m + \sigma_{mj} + \mu_{mw} \\
-Y_{mw} &= \beta_0 + \beta_1 P_{mw} + \sum \beta_{2m} w + h(W_{mw}) + \alpha_m + \sigma_{mj} + \epsilon_{mw}
+s_{jc} &= \beta x_{jc} + \alpha \rho_{jc} + \eta_j + \lambda_c + \xi_{jc} \\
+s_{jc} &= \beta x_{c} H_j + \alpha \rho_{jc} + \eta_j + \lambda_c + \xi_{jc}
 \end{align*}
 $$
 
-- $TI_w$ varies at the week level so week by year fixed effects are not identified
-    - control for municipality-specific week by year trends ($w$)
-- municipality fixed effects ($\alpha_m$) control for *time-invariant* characteristics across municipalities
-- bimonthly x municipality fixed effects ($\sigma_{mj}$) control for seasonal effects within each municipality
-- $h(W_{mw})$ is a set of controls for temperature and weather conditions
+- $x_{c}$: ambient pollution
+- $H_j$: indicator variable for HEPA purifiers
+- Identifying variation: $x_{c} H_j$ has city-by-product variation and $\rho_{jc}$ has city-by-product
 
-## Empirical Strategy
-### Instrumental Variables
+## Empirical Strategy {.smaller}
+### RD
+
+First Stage: 
 
 $$
-\begin{align*}
-P_{mw} &= \pi_0 + \pi_1 TI_w + \sum \pi_{2m} w + h(W_{mw}) + \alpha_m + \sigma_{mj} + \mu_{mw} \\
-Y_{mw} &= \beta_0 + \beta_1 P_{mw} + \sum \beta_{2m} w + h(W_{mw}) + \alpha_m + \sigma_{mj} + \epsilon_{mw}
-\end{align*}
+x_c = \gamma N_c + \phi_1 d_c + \phi_2 d_c N_c + \nu_l + \epsilon_c
 $$
 
-Concerns:
+where $x_c$ represents PM~10~ in city $c$, $N_c$ is the dummy variable for
+the north, $d_c$ represents the distance between city $c$ and the Huai River,
+and $e_c$ is the error term. 
 
-- Residual seasonal variation
-- Short time frame (such as week) may overstate the effect
-- Exclusion restriction may be violated
-- Single instrument for all pollutants
+- $\lambda$ measures a discontinuous change in $x_c$ at the Huai River border
 
-## Results {.nostretch}
-### Instrument Relationship
+Reduced form RD: 
+$$
+\ln s_{jc} = \rho N_c H_j + \alpha p_{jc} + \left( \psi_1 d_c + \psi_2 d_c N_c + \nu_l \right) H_j + \eta_j + \lambda_c + \epsilon_{jc}
+$$
 
-![](assets/prez-lecture-4-240912/figure5.png){width="150%"}
+where $s_{jc}$ and $p_{jc}$ respectively represent the market share and the price of product $j$ in city $c$, $\eta_j$ represents product fixed effects, and $\lambda_c$ represents city fixed effects.
+
+## Empirical Strategy 
+### RD + IV
+
+Estimate the MWTP for clean air (second stage): 
+
+$$
+\ln s_{jc} = \rho x_c H_j + \alpha p_{jc} + \left( \psi_1 d_c + \psi_2 d_c N_c + \nu_l \right) H_j + \eta_j + \lambda_c + \epsilon_{jc}
+$$
+
+using $N_c H_j$ as the instrument for $x_c H_j$
+
+- $- \beta / \alpha$  represents the MWTP for one unit of PM~10~ (μg/m^3^)
+- Also uses transportation costs from a product’s manufacturing location to its market as an IV for price to capture a a supply-side cost shifter that does not directly affect demand
+- Exclusion restriction: the instruments must be uncorrelated with the error term given the control variables and fixed effects
 
 ## Results 
-### IV First Stage
+### RD design at the Huai River boundary
 
-![](assets/prez-lecture-4-240912/table2.png)
+:::: {.columns}
+::: {.column width="50%"}
+![](assets/prez-lecture-6-240912/figure2a.png)
+:::
+::: {.column width="50%"}
+![](assets/prez-lecture-6-240912/figure2b.png)
+:::
+::::
+
 
 ## Results 
-### IV
+### Standard Logit
 
-![](assets/prez-lecture-4-240912/table3.png)
+![](assets/prez-lecture-6-240912/table4.png)
 
+## Results 
+### Standard Logit, Role of Information
 
-## Results
-### IV, Cause of Death
-
-![](assets/prez-lecture-4-240912/table4.png)
-
-## Results
-### IV, Multiple Pollutants
-
-![](assets/prez-lecture-4-240912/table5.png)
+![](assets/prez-lecture-6-240912/table6.png)
 
 ## Results
-### Comparison with US
+### Marginal WTP for clean air and household income
 
-![](assets/prez-lecture-4-240912/table6.png)
+![](assets/prez-lecture-6-240912/figure4.png)
 
 ## Summary 
 
-- Statistically significant effects of pollution on infant mortality
-- Compared to US:
-    - Larger effects for CO
-    - Comparable estimates for PM~10~, despite much higher levels
-- Policy decisions need to consider the different effects in developing countries
-    - May understate the benefits from environmental regulation
+- MWTP for removing 1 μ g/m^3^ of PM~10~ per year is $1.34
+    - Much higher for higher-income households
+- Implied value of a statistical life year (VSLY) per person is $455
+    - Greater than Kremer et al. 2011 ($24) but less than León and Miguel 2017 ($13,500 Africans; $23,232 Non-Africans)
+
+- Drawbacks:
+    - No information on other indoor avoidance behavior
+    - Ignores dynamic decision making
+    - Lack of analysis on market failures
 
 
 
