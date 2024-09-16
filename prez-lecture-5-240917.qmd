@@ -21,140 +21,116 @@ format:
 ## Motivation
 
 <!-- Paper: https://onlinelibrary.wiley.com/doi/full/10.1111/ecoj.12244 -->
+<!-- Open Access: https://www.tesble.com/10.1111/ecoj.12244 -->
 
-TODO: Add details...
+- In rural communities, often there is a tradeoff between working in agriculture or other capital-intensive industries
+- In Ghana, gold mining near farms may change the agricultural production function of local farmers -- espically considering externalities
+- There is a non-input externality of mining on traditional sectors
+- The expansion of mines can be costly to farming communities
 
+## Research Question 
+
+> What is the impact of polluting industries -- such as gold mining -- on agricultural productivity for traditional farming?
+
+![](assets/prez-lecture-5-240917/mining-ghana.jpg)
 
 ## Overview 
 
-- Context: Mexico 1997 – 2006
-    - Rapidly industrializing during this time period
-    - Also implemented policies aimed at improving air quality
-- Methods: fixed effects and IV using thermal inversions
-- Findings: 
-    - Evidence that pollution increases infant mortality
-    - Compared to the US, larger marginal effects for CO and similar marginal effects for PM~10~
-- Concern: other factors may be correlated with health
-    - Weather, socio-economic status and changes in economic conditions
+- Context: Ghana 1997 - 2005
+    - Expansion of large-scale, modern mining (97% of mines) located on fertile agricultural lands
+    - Extractive industry with pollution externality and draws from local labor force
+- Methods: 
+    - Difference in Differences: Compare mining and non-mining areas by distance and change in mining
+    - Instrumental Variable: Identify production function using farmers' input endowments
+- Findings near mines: 
+    - $\downarrow$ agricultural output and total factor productivity 
+    - $\uparrow$ poverty rates & $\uparrow$ pollution of $NO_2$
 
-![](assets/prez-lecture-4-240912/figure1.png)
+## Data
+### Gold Production
+
+![](assets/prez-lecture-5-240917/figure-1.png)
 
 
 ## Data
-### Mexico City 1997 – 2006
+### Ghana 1997 - 2005
 
-1. Neonatal^[Children that are 28 days and younger] and infant mortality^[Children that are one year and younger] data from the Ministry of Health
-    - Annual neonatal mortality rate: 1,183 (compared to 460 in US)
-    - Annual infant mortality rate: 1,986 (compared to 698 in US)
+1. Ghana Living Standards Survey (GLSS 4 & 5)
+    - 1998 - 2006
+    - 1,627 farmers
 
-2. Pollution data from Automatic Network of Atmospheric Monitoring (RAMA)
-    - PM~10~ 24-hour concentration: 67 $\mu$ m
-    - CO 8 hour concentration: 2,707.56 ppb
+2. Gold Mines in Western, Ashanti, & Central regions
+    - ArcGIS map of gold mines
+    - Unclear where this is sourced (Ghana's EPA...)
 
-3. Thermal inversion data from Meteorological Unit of the local Ministry of Environment
-    - Number of inversions in a week: 1.68
+3. Relative Average Troposheric $NO_2$ Pollution
+    - NASA's Ozone Monitoring Instrument (OMI)
+    - Apirl - June 2005
 
-4. Temperature and weather data from RAMA
-    - Used as controls
+## Data
+### Study Area
 
+![](assets/prez-lecture-5-240917/figure-2.png)
 
-## Empirical Strategy 
-### Fixed Effects
-
-Objective: estimate $\beta_1$ the relationship between pollution ($P_{mw}$) in a municipality ($m$) in a given week ($w$) and mortality per 100,000 live births ($Y_{mw}$)
-$$
-Y_{mw} = \beta_0 + \beta_1 P_{mw} + \alpha_m + \sigma_{mj} + \epsilon_{mw}
-$$
-
-- $\alpha_m$ is a set of municipality fixed effects that control for permanent differences across municipalities
-- $\sigma_{mj}$ is a set of bimonthly x municipality fixed effects, which control for common factors in a given two month block that could affect both pollution levels and infant mortality within a municipality
-
-## Empirical Strategy 
-### Fixed Effects
-
-$$
-Y_{mw} = \beta_0 + \beta_1 P_{mw} + \alpha_m + \sigma_{mj} + \epsilon_{mw}
-$$
-
-Concerns:
-
-- Unobserved, *time-varying* differences across municipalities will bias $\beta_1$
-- Classical measurement error in the pollution variable will bias $\beta_1$ downwards
 
 ## Empirical Strategy
-### Instrumental Variables
+### Agricultural Production Function
 
-Objective: test whether inversions increase the concentrations of
-different types of pollutants $\rightarrow$ use the number of thermal inversions in a given week ($TI_w$) to instrument for pollution
+Consumer-producer household framework (Benjamin, 1992; Bardhan and Urdy, 1999) $\to$ Agricultural production function
 
-$$
-\begin{align*}
-P_{mw} &= \pi_0 + \pi_1 TI_w + \sum \pi_{2m} w + h(W_{mw}) + \alpha_m + \sigma_{mj} + \mu_{mw} \\
-Y_{mw} &= \beta_0 + \beta_1 P_{mw} + \sum \beta_{2m} w + h(W_{mw}) + \alpha_m + \sigma_{mj} + \epsilon_{mw}
-\end{align*}
-$$
-
-- $TI_w$ varies at the week level so week by year fixed effects are not identified
-    - control for municipality-specific week by year trends ($w$)
-- municipality fixed effects ($\alpha_m$) control for *time-invariant* characteristics across municipalities
-- bimonthly x municipality fixed effects ($\sigma_{mj}$) control for seasonal effects within each municipality
-- $h(W_{mw})$ is a set of controls for temperature and weather conditions
-
-## Empirical Strategy
-### Instrumental Variables
+- $\eta_i$: Imperfect input markets (heterogenous access to input markets)
+- $S_{vt}$: Mining activities
 
 $$
-\begin{align*}
-P_{mw} &= \pi_0 + \pi_1 TI_w + \sum \pi_{2m} w + h(W_{mw}) + \alpha_m + \sigma_{mj} + \mu_{mw} \\
-Y_{mw} &= \beta_0 + \beta_1 P_{mw} + \sum \beta_{2m} w + h(W_{mw}) + \alpha_m + \sigma_{mj} + \epsilon_{mw}
-\end{align*}
+\begin{align}
+Y_{ivt} = & A_{ivt} M_{it}^\alpha L_{it}^\beta e^{\varepsilon_{it}} \\
+A_{ivt} = & exp(\eta_i + \rho_v + \gamma S_{vt})
+\end{align}
 $$
 
-Concerns:
-- Residual seasonal variation
-- Short time frame (such as week) may overstate the effect
-- Exclusion restriction 
-- Single instrument for all pollutants
+Identify with farmers' input endownments as IV: land holdings, household size, etc.
 
-## Results {.nostretch}
-### IV First Stage
+<!-- -  In the presence of imperfect input markets, endowments are a good predictor of input use -->
 
-![](assets/prez-lecture-4-240912/figure5.png){width="150%"}
+## Empirical Strategy 
+### Difference in Differences
+
+Sources of Variation: 
+
+- $\theta$: Distance from household to nearest mine
+- $\gamma$ Changes in mining production
+
+$$
+Y_{ivdt} = \alpha m_{it} + \beta l_{it} + \gamma S_{vt} + \phi Z_i + \delta_d + \psi_t + \theta mining_v + \xi_{ivt}
+$$
+
+
 
 ## Results 
-### IV First Stage
+### Agricultural Productivity
 
-![](assets/prez-lecture-4-240912/table2.png)
+![](assets/prez-lecture-5-240917/table-3.png)
+
 
 ## Results 
-### IV
+### Pollution
 
-![](assets/prez-lecture-4-240912/table3.png)
+![](assets/prez-lecture-5-240917/table-5.png)
 
+## Results 
+### Poverty
 
-## Results
-### IV, Cause of Death
-
-![](assets/prez-lecture-4-240912/table4.png)
-
-## Results
-### IV, Multiple Pollutants
-
-![](assets/prez-lecture-4-240912/table5.png)
-
-## Results
-### Comparison with US
-
-![](assets/prez-lecture-4-240912/table6.png)
+![](assets/prez-lecture-5-240917/table-10.png)
 
 ## Summary 
 
-- Statistically significant effects of pollution on infant mortality
-- Compared to US:
-    - Larger effects for CO
-    - Comparable estimates for PM~10~, despite much higher levels
-- Policy decisions need to consider the different effects in developing countries
-    - May understate the benefits from environmental regulation
+- Mining Areas lead to 40% reduction in total factor productivity
+- Increase in rural poverty
+- Call for environmental assessments to consider impact on agricultural and farmers' incomes
+- Mining revenues ($75 million) do not exceed loss in farmer incomes ($97 million)
+- Limitation: Only applicable to Ghana context
+
+
 
 
 
