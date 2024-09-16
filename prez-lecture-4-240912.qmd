@@ -131,11 +131,11 @@ Concerns:
 
 - Residual seasonal variation
 - Short time frame (such as week) may overstate the effect
-- Exclusion restriction 
+- Exclusion restriction may be violated
 - Single instrument for all pollutants
 
 ## Results {.nostretch}
-### IV First Stage
+### Instrument Relationship
 
 ![](assets/prez-lecture-4-240912/figure5.png){width="150%"}
 
