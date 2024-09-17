@@ -50,7 +50,7 @@ format:
 
 
 ## Data
-### China City 2006-2014
+### China Cities 2006-2014
 
 1. Air purifier sales transaction data
     - ratio of HEPA purifier sales relative to non-HEPA purifier sales: 
@@ -117,7 +117,7 @@ where $x_c$ represents PM~10~ in city $c$, $N_c$ is the dummy variable for
 the north, $d_c$ represents the distance between city $c$ and the Huai River,
 and $e_c$ is the error term. 
 
-- $\lambda$ measures a discontinuous change in $x_c$ at the Huai River border
+- $\nu_l$ measures a discontinuous change in $x_c$ at the Huai River border
 
 Reduced form RD: 
 $$
