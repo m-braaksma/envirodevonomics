@@ -1,0 +1,126 @@
+---
+title: 'Eliciting and Utilizing Willingness to Pay: Evidence from Field Trials in Northern Ghana'
+subtitle: Berry, Fischer, and Guiteras
+author: 
+    name: APEC 8990
+    affiliations: Paper Presentations
+date: 09/24/2024
+date-format: long
+format: 
+    clean-revealjs:
+        embed-resources: true
+        incremental: false
+        title-slide-attributes: 
+            data-background-image: assets/UMN9_M-1line-blk.png
+            data-background-size: 25%
+            data-background-position: 4% 97%
+        html-math-method: katex
+        scrollable: true
+---
+
+## Motivation
+
+<!-- Paper: https://www.journals.uchicago.edu/doi/abs/10.1086/705374?mobileUi=0& -->
+<!-- Open Access: https://sci-hub.ru/https://doi.org/10.1086/705374 -->
+
+- Clean water treatment is very beneficial yet there is low take-up (Ahuja et al., 2010)
+- In general, underinvestment in beneficial technologies $\to$ low WTP (Foster and Rosenzweig, 2010; Jack 2011; Dupas and Miguel, 2017)
+
+![](assets/prez-lecture-7-240924/diarrhea-death.png)
+
+## Research Question 
+
+> What is the willingness-to-pay (WTP) for clean water technology in Ghana?
+
+> What is the impact of clean water technology on childhood diarrhea?
+
+
+## Overview 
+
+- Context: Northern Ghana
+    - 1,265 households
+    - Field experiment to produce water filtration (Kosim filter)
+- Methods: 
+    - IV for purchasing through BDM auction
+    - Becker-DeGroot-Marschak (BDM) mechanism to measure WTP
+- Findings: 
+    - WTP is low relative to cost
+    - Demand is inelastic at low prices for clean water technology (take up is low)
+    - Diarrhea incidence reduce by 1/3rd but negative effect after 1 year
+
+## Data
+### Kosim Water Filter
+
+![](assets/prez-lecture-7-240924/kosim-water-filter.jpg)
+
+## Data
+### BDM Design
+
+1. Demonstrate the Kosim filter
+2. Household has only 1 opportunity to buy
+3. Household bids their price (WTP) to purchase
+4. Enumerator draws random price from 0 - 100 pesewas
+5. If the price is at or below WTP, household must buy the filter
+
+- 272 respondents drew a price $\le WTP$ 
+- 269 respondents purchased
+- Compared to a take-it-or-leave-it auction (TIOLI)
+
+
+
+## Data
+### Rural Northern Ghana 
+
+1. Household Surveys
+    - 15 villages
+    - Follow-up: 1 month, 1 year
+    - 1,265 households
+    - Childhood rates of diarrhea
+
+
+## Empirical Strategy
+### Instrumental Variable
+
+- $P$: BDM draw (price) instrument
+- $T$: Treatment for purchasing filter
+
+$$
+\begin{align}
+T_{ic} = & \gamma_0 + \gamma_1 P_{ic} + \nu_{ic} \\
+y_{ijc} = & \beta_0 + \beta_1 T_{ic} + \varepsilon_{jic}
+\end{align}
+$$
+
+
+## Results 
+### Treatment Effects
+
+![](assets/prez-lecture-7-240924/table-2.png)
+
+## Results 
+### Demand Curve using WTP
+
+![](assets/prez-lecture-7-240924/figure-1a.png)
+
+## Results 
+### Price Elasticity for WTP
+
+![](assets/prez-lecture-7-240924/figure-1b.png)
+
+## Results 
+### WTP Avoid Statistical Death
+
+![](assets/prez-lecture-7-240924/figure-5b.png)
+
+
+## Summary 
+
+- Demand for health goods are low
+- Shows the disipating long-run impact of water filtration on childhood diarrhea
+- Implied WTP to avoid one statistical child death is only USD 3,604
+- BDM auction and TIOLI auction produce similar results (validates BDM)
+
+
+
+
+
