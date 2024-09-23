@@ -23,163 +23,94 @@ format:
 :::: {.columns}
 
 ::: {.column width="60%"}
-- Air quality is poor in developing countries and has negative health and economic consequences
-- However, poor air quality may actually be optimal if WTP is low
-- Limited empirical evidence of WTP for clean air
+- Deforestation generates a range of negative externalities
+- Limited evidence on the role of sanctions in preventing deforestation
+    - These sanctions may have spatial spillover effects
 :::
 
 ::: {.column width="40%"}
 
 ### Research Question 
-> What is the willingness to pay for clean air?
+> How do environmental sanctions and spillovers effect forest conservation in the Brazilian Amazon?
 :::
 
 ::::
 
 
 ## Overview 
-
-- Context: China 2006-2014
-    - Developing country with poor air quality
-- Methods:     
-    - Spatial RDD based on Huai River heating policy
-    - Product fixed effects and city fixed effects
-    - Distance to plant IV to capture variation in transportation cost, which is a supply-side cost shifter
-- Findings: 
-    - Households have a high WTP for air quality, but heterogeneity exists by income and information
-
+- Context: Brazilian Amazon 2000-2019
+    - Farms account for 53% of the Amazon’s deforestation
+    - In the mid-2000s, the government implemented policies reduce deforestation rates
+- Methods:
+    - Staggered difference-in-differences
+- Findings:
+    - Punished farmers decrease deforestation by 49%
+    - Adjacent neighbors decrease by 21%
 
 ## Data
-### China Cities 2006-2014
+### Brazil 2000-2019
 
-1. Air purifier sales transaction data
-    - ratio of HEPA purifier sales relative to non-HEPA purifier sales: 
-        - 1.2 for southern consumers compared to 2.0 for northern consumers
-2. City-level annual average PM~10~
-3. City-year measures on population, urban population, and GDP per capita
-4. Location data for cities
-    - Distance to Huai River and factory or importing port locations of air purifiers
+1. Farm-year panel data
+    - Spatial data and tenure
 
+2. Deforestation and Reforestation
+    - Annual LULC 30mx30m, Mapbiomas
+    - CO~2~ emissions from  aboveground biomass data, Global ForestWatch
 
-## Demand for Air Purifiers {.smaller}
-### Random Utility Model
+3. Farm-year deforestation-related sanctions
+    - Public administrative records, including fines, embargoes, and seizures
 
-- Consumer $i$ in city $c$ can purchase air purifier $j$ at price $p_{jc}$ to reduce indoor air pollution by $x_{jc} = x_c \cdot e_j$
-- Purifier $j$’s effectiveness at reducing indoor particulate matter $e_j \in [0,1]$
-- Observe markets for $c = 1,...,C$ cities with $i=1,...,I_c$ consumers
-
-Then the conditional indirect utility of consumer $i$ from purchasing air purifier $j$ at city $c$ is
-
-$$
-u_{ijc} = \beta_i x_{jc} + \alpha_i \rho_{jc} + \eta_j + \lambda_c + \xi_{jc} + \epsilon_{ijc}
-$$
-
-where $x_{jc}$ represents the improvements in indoor air quality conditional
-on the purchase of product $j$, $\rho_{jc}$ represents the price of product $j$ in market $c$, $\eta_j$ represents product fixed effects that capture utility gains from unobserved and observed product characteristics, $\lambda_c$ represents city fixed effects, $\xi_{jc}$ represents a product-city specific demand shock, and $\epsilon_{ijc}$ represents a mean-zero stochastic term.
-
-- $\beta_i$: marginal utility for clean air
-- $\alpha_i$: marginal disutility of price
-
-## Demand for Air Purifiers {.smaller}
-### Logit Model
-
-Assuming that $\beta_i$ = $\beta$ and $\alpha_i$ = $\alpha$ for
-consumer $i$ and that the error term is distributed as a type I extreme value
-function, then consumer $i$ purchases purifier $j$ if $u_{ijc} > u_{ikc}$ for $\forall k \ne j$. Then the market share for product $j$ in city $c$ is
-
-$$
-s_{jc} = \frac{\exp \left( \beta x_{jc} + \alpha p_{jc} + \eta_j + \lambda_c + \xi_{jc} \right)}{\sum_{k=0}^{J} \exp \left( \beta x_{kc} + \alpha p_{kc} + \eta_k + \lambda_c + \xi_{kc} \right)}
-$$
-
-which simplifies to 
-
-$$
-\begin{align*}
-s_{jc} &= \beta x_{jc} + \alpha \rho_{jc} + \eta_j + \lambda_c + \xi_{jc} \\
-s_{jc} &= \beta x_{c} H_j + \alpha \rho_{jc} + \eta_j + \lambda_c + \xi_{jc}
-\end{align*}
-$$
-
-- $x_{c}$: ambient pollution
-- $H_j$: indicator variable for HEPA purifiers
-- Identifying variation: $x_{c} H_j$ has city-by-product variation and $\rho_{jc}$ has city-by-product
 
 ## Empirical Strategy {.smaller}
-### RD
+### Staggered DiD
 
-First Stage: 
-
-$$
-x_c = \gamma N_c + \phi_1 d_c + \phi_2 d_c N_c + \nu_l + \epsilon_c
-$$
-
-where $x_c$ represents PM~10~ in city $c$, $N_c$ is the dummy variable for
-the north, $d_c$ represents the distance between city $c$ and the Huai River,
-and $e_c$ is the error term. 
-
-- $\nu_l$ measures a discontinuous change in $x_c$ at the Huai River border
-
-Reduced form RD: 
-$$
-\ln s_{jc} = \rho N_c H_j + \alpha p_{jc} + \left( \psi_1 d_c + \psi_2 d_c N_c + \nu_l \right) H_j + \eta_j + \lambda_c + \epsilon_{jc}
-$$
-
-where $s_{jc}$ and $p_{jc}$ respectively represent the market share and the price of product $j$ in city $c$, $\eta_j$ represents product fixed effects, and $\lambda_c$ represents city fixed effects.
-
-## Empirical Strategy 
-### RD + IV
-
-Estimate the MWTP for clean air (second stage): 
+For a given treatment type, an unconditional estimator for the average treatment effect of environmental sanctions for cohort $g$ at year $t \geq g$:
 
 $$
-\ln s_{jc} = \rho x_c H_j + \alpha p_{jc} + \left( \psi_1 d_c + \psi_2 d_c N_c + \nu_l \right) H_j + \eta_j + \lambda_c + \epsilon_{jc}
+\widehat{ATT}^{type}(g, t) = \frac{\sum_{i} \Delta Y_{ig-1,t} 1\{G_{i}^{type} = g\}}{\sum_{i} 1 \{G_{i}^{type} = g\}} - \frac{\sum_{i} \Delta Y_{ig-1,t} C_{i}}{\sum_{i} C_{i}}
 $$
 
-using $N_c H_j$ as the instrument for $x_c H_j$
+where $i \in {1, 2, ..., N}$ represents farms, $t \in \{ 2000, 2001, ..., 2019 \}$ years, $G_{i}^{type} = g \in \{2005, 2006, ..., 2019\}$ treatment cohorts of each type, $C_{i} = 1$ the control group of never-treated farms, and $\Delta Y_{ig-1,t} = Y_{i,t} - Y_{i,g-1}$ the evolution of outcome $Y \in {\text{IHS(deforestation area), IHS(reforestation area)}}$ in a given year $t$ relative to the year before treatment $g - 1$
 
-- $- \beta / \alpha$  represents the MWTP for one unit of PM~10~ (μg/m^3^)
-- Also uses transportation costs from a product’s manufacturing location to its market as an IV for price to capture a a supply-side cost shifter that does not directly affect demand
-- Exclusion restriction: the instruments must be uncorrelated with the error term given the control variables and fixed effects
-
-## Results 
-### RD design at the Huai River boundary
-
-:::: {.columns}
-::: {.column width="50%"}
-![](assets/prez-lecture-6-240912/figure2a.png)
-:::
-::: {.column width="50%"}
-![](assets/prez-lecture-6-240912/figure2b.png)
-:::
-::::
+- Equivalent to a two-period/two-group difference-in-differences estimator that compares the average outcome evolution of the treated group in year $t$, post-treatment, relative to year $g - 1$, pre-treatment, with the average outcome evolution of the control group across the same periods.
 
 
 ## Results 
-### Standard Logit
+### Sanction Effects on Deforestation and Reforestation
 
-![](assets/prez-lecture-6-240912/table4.png)
+![](assets/prez-lecture-8-240926/figure2.png)
 
 ## Results 
-### Standard Logit, Role of Information
+### Robustness to Parallel Trends Violation
 
-![](assets/prez-lecture-6-240912/table6.png)
+![](assets/prez-lecture-8-240926/figure3.png)
 
-## Results
-### Marginal WTP for clean air and household income
 
-![](assets/prez-lecture-6-240912/figure4.png)
+## Results 
+### Heterogeneity by Type of Sanction
+
+![](assets/prez-lecture-8-240926/table2.png)
+
+## Results 
+### Sanctions Effects Over Time
+
+![](assets/prez-lecture-8-240926/figure4.png)
+
+## Results 
+### Sanction Effects on Deforestation by Monitoring Degree
+
+![](assets/prez-lecture-8-240926/table3.png)
+
+## Results 
+### Sanction Effects by Neighbor Distance
+
+![](assets/prez-lecture-8-240926/figure5.png)
 
 ## Summary 
 
-- MWTP for removing 1 μ g/m^3^ of PM~10~ per year is $1.34
-    - Much higher for higher-income households
-- Implied value of a statistical life year (VSLY) per person is $455
-    - Greater than Kremer et al. 2011 ($24) but less than León and Miguel 2017 ($13,500 Africans; $23,232 Non-Africans)
-
-- Drawbacks:
-    - No information on other indoor avoidance behavior
-    - Ignores dynamic decision making
-    - Lack of analysis on market failures
+- Sanctions generate persistent reductions in deforestation
+    - Avoiding the emission of 1.599 billion tons of CO~2~
+- Spillovers reduce deforestation among neighboring farmers
 
 
 
