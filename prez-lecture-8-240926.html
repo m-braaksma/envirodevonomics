@@ -1249,16 +1249,39 @@ APEC 8990
 </ul></li>
 </ol>
 </section>
-<section id="empirical-strategy" class="slide level2 smaller">
+<section id="empirical-strategy" class="slide level2">
 <h2>Empirical Strategy</h2>
 <h3 id="staggered-did">Staggered DiD</h3>
 <p>For a given treatment type, an unconditional estimator for the average treatment effect of environmental sanctions for cohort <span class="math inline">g</span> at year <span class="math inline">t \geq g</span>:</p>
 <p><span class="math display">
 \widehat{ATT}^{type}(g, t) = \frac{\sum_{i} \Delta Y_{ig-1,t} 1\{G_{i}^{type} = g\}}{\sum_{i} 1 \{G_{i}^{type} = g\}} - \frac{\sum_{i} \Delta Y_{ig-1,t} C_{i}}{\sum_{i} C_{i}}
 </span></p>
-<p>where <span class="math inline">i \in {1, 2, ..., N}</span> represents farms, <span class="math inline">t \in \{ 2000, 2001, ..., 2019 \}</span> years, <span class="math inline">G_{i}^{type} = g \in \{2005, 2006, ..., 2019\}</span> treatment cohorts of each type, <span class="math inline">C_{i} = 1</span> the control group of never-treated farms, and <span class="math inline">\Delta Y_{ig-1,t} = Y_{i,t} - Y_{i,g-1}</span> the evolution of outcome <span class="math inline">Y \in {\text{IHS(deforestation area), IHS(reforestation area)}}</span> in a given year <span class="math inline">t</span> relative to the year before treatment <span class="math inline">g - 1</span></p>
+<div style="font-size: 80%;">
+<p>where</p>
 <ul>
-<li>Equivalent to a two-period/two-group difference-in-differences estimator that compares the average outcome evolution of the treated group in year <span class="math inline">t</span>, post-treatment, relative to year <span class="math inline">g - 1</span>, pre-treatment, with the average outcome evolution of the control group across the same periods.</li>
+<li><span class="math inline">i \in {1, 2, ..., N}</span> represents farms</li>
+<li><span class="math inline">t \in \{ 2000, 2001, ..., 2019 \}</span> years</li>
+<li><span class="math inline">G_{i}^{type} = g \in \{2005, 2006, ..., 2019\}</span> treatment cohorts of each type</li>
+<li><span class="math inline">C_{i} = 1</span> the control group of never-treated farms</li>
+<li><span class="math inline">\Delta Y_{ig-1,t} = Y_{i,t} - Y_{i,g-1}</span> the evolution of outcome <span class="math inline">Y</span> in a given year <span class="math inline">t</span> relative to the year before treatment <span class="math inline">g - 1</span></li>
+</ul>
+</div>
+</section>
+<section id="empirical-strategy-1" class="slide level2">
+<h2>Empirical Strategy</h2>
+<h3 id="staggered-did-1">Staggered DiD</h3>
+<p><span class="math display">
+\widehat{ATT}^{type}(g, t) = \frac{\sum_{i} \Delta Y_{ig-1,t} 1\{G_{i}^{type} = g\}}{\sum_{i} 1 \{G_{i}^{type} = g\}} - \frac{\sum_{i} \Delta Y_{ig-1,t} C_{i}}{\sum_{i} C_{i}}
+</span></p>
+<ul>
+<li>Equivalent to a two-period/two-group difference-in-differences estimator
+<ul>
+<li>Compares the average outcome evolution of the treated group in year <span class="math inline">t</span>, post-treatment, relative to year <span class="math inline">g - 1</span>, pre-treatment, with the average outcome evolution of the control group across the same periods</li>
+</ul></li>
+<li>Main results aggregated to show event studies
+<ul>
+<li>5 years of pre- and post-treatment</li>
+</ul></li>
 </ul>
 </section>
 <section id="results" class="slide level2">
@@ -1297,8 +1320,10 @@ APEC 8990
 <li>Sanctions generate persistent reductions in deforestation
 <ul>
 <li>Avoiding the emission of 1.599 billion tons of CO<sub>2</sub></li>
+<li>Despite relatively low rates of punishment</li>
 </ul></li>
 <li>Spillovers reduce deforestation among neighboring farmers</li>
+<li>No evidence of strategic displacement to farms further away from punishment</li>
 </ul>
 <div class="footer footer-default">
 
