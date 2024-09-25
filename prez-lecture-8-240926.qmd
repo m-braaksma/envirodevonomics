@@ -61,7 +61,7 @@ format:
     - Public administrative records, including fines, embargoes, and seizures
 
 
-## Empirical Strategy {.smaller}
+## Empirical Strategy
 ### Staggered DiD
 
 For a given treatment type, an unconditional estimator for the average treatment effect of environmental sanctions for cohort $g$ at year $t \geq g$:
@@ -70,10 +70,27 @@ $$
 \widehat{ATT}^{type}(g, t) = \frac{\sum_{i} \Delta Y_{ig-1,t} 1\{G_{i}^{type} = g\}}{\sum_{i} 1 \{G_{i}^{type} = g\}} - \frac{\sum_{i} \Delta Y_{ig-1,t} C_{i}}{\sum_{i} C_{i}}
 $$
 
-where $i \in {1, 2, ..., N}$ represents farms, $t \in \{ 2000, 2001, ..., 2019 \}$ years, $G_{i}^{type} = g \in \{2005, 2006, ..., 2019\}$ treatment cohorts of each type, $C_{i} = 1$ the control group of never-treated farms, and $\Delta Y_{ig-1,t} = Y_{i,t} - Y_{i,g-1}$ the evolution of outcome $Y \in {\text{IHS(deforestation area), IHS(reforestation area)}}$ in a given year $t$ relative to the year before treatment $g - 1$
+::: {style="font-size: 80%;"}
+where 
 
-- Equivalent to a two-period/two-group difference-in-differences estimator that compares the average outcome evolution of the treated group in year $t$, post-treatment, relative to year $g - 1$, pre-treatment, with the average outcome evolution of the control group across the same periods.
+- $i \in {1, 2, ..., N}$ represents farms
+- $t \in \{ 2000, 2001, ..., 2019 \}$ years
+- $G_{i}^{type} = g \in \{2005, 2006, ..., 2019\}$ treatment cohorts of each type
+- $C_{i} = 1$ the control group of never-treated farms
+-  $\Delta Y_{ig-1,t} = Y_{i,t} - Y_{i,g-1}$ the evolution of outcome $Y$ in a given year $t$ relative to the year before treatment $g - 1$
+:::
 
+## Empirical Strategy
+### Staggered DiD
+
+$$
+\widehat{ATT}^{type}(g, t) = \frac{\sum_{i} \Delta Y_{ig-1,t} 1\{G_{i}^{type} = g\}}{\sum_{i} 1 \{G_{i}^{type} = g\}} - \frac{\sum_{i} \Delta Y_{ig-1,t} C_{i}}{\sum_{i} C_{i}}
+$$
+
+- Equivalent to a two-period/two-group difference-in-differences estimator
+    - Compares the average outcome evolution of the treated group in year $t$, post-treatment, relative to year $g - 1$, pre-treatment, with the average outcome evolution of the control group across the same periods
+- Main results aggregated to show event studies
+    - 5 years of pre- and post-treatment
 
 ## Results 
 ### Sanction Effects on Deforestation and Reforestation
@@ -110,7 +127,9 @@ where $i \in {1, 2, ..., N}$ represents farms, $t \in \{ 2000, 2001, ..., 2019 \
 
 - Sanctions generate persistent reductions in deforestation
     - Avoiding the emission of 1.599 billion tons of CO~2~
+    - Despite relatively low rates of punishment
 - Spillovers reduce deforestation among neighboring farmers
+- No evidence of strategic displacement to farms further away from punishment
 
 
 
