@@ -40,7 +40,7 @@ format:
 ## Overview 
 - Context: Brazilian Amazon 2000-2019
     - Farms account for 53% of the Amazon’s deforestation
-    - In the mid-2000s, the government implemented policies reduce deforestation rates
+    - In the mid-2000s, the government implemented policies to reduce deforestation rates
 - Methods:
     - Staggered difference-in-differences
 - Findings:
