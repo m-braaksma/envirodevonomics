@@ -1,0 +1,142 @@
+---
+title: 'Harvesting the Rain: The Adoption of Environmental Technologies in the Sahel'
+subtitle: Aker and Jack
+author: 
+    name: APEC 8990
+    affiliations: Paper Presentations
+date: 10/01/2024
+date-format: long
+format: 
+    clean-revealjs:
+        embed-resources: true
+        incremental: false
+        title-slide-attributes: 
+            data-background-image: assets/UMN9_M-1line-blk.png
+            data-background-size: 25%
+            data-background-position: 4% 97%
+        html-math-method: katex
+        scrollable: true
+---
+
+## Motivation
+
+<!-- Open Access: https://www.atai-research.org/wp-content/uploads/2022/01/Aker-Jenny-C-and-B.-Kelsey-Jack.-Harvesting-the-Rain-The-Adoption-of-Environmental-Technologies-in-the-Sahel-December-2023.pdf -->
+
+- Fixed costs of investment may deter adoption of environmental technology
+    - Information, liquidity, credit constraints
+- Desertification of the Sahel has led to a drop in agricultural production.
+- How can we increase adoption of technology for climate adaptation?
+    - Low adoption rates of rainwater harvesting technology $\sim$ 10% in Niger
+
+## Motivation
+
+![](assets/prez-lecture-9-241001/sahel-desertification.jpg)
+
+## Research Question 
+
+> Can Rainwater Harvesting (RWH) techniques be a climate adaptation that mitigates climate shocks?
+
+![](assets/prez-lecture-9-241001/demi-lunes.jpg)
+
+
+## Overview 
+
+- Context: Niger
+    - 180 villages
+    - Field experiment to produce water filtration (Kosim filter)
+- Methods: 
+    - Clustered RCT at village level
+    - Treatment recieved training in demi-lune construction
+    - Supplemented by a UCT-early of $20 USD and CCT of $0.4 USD per demi-lune constructed and UCT-late of $20.5 USD
+
+## Overview 
+
+- Findings: 
+    - Training massively increased adoption with lasting effects over 3 years
+    - Intensive of adoption increased with 34 demi-lunes per farmer in treatment over control
+    - Information and liquidity for upfront investments are the binding constraints
+    - Treatment hired more labor, and increased extensification and agricultural production
+    - Profitable tech adoption: revenue ($34) > costs ($30)
+
+## Data
+### Demi-Lunes (Technology)
+
+Cost: $80 USD (14% of per capita income)
+
+![](assets/prez-lecture-9-241001/demi-lunes-landscape.jpg)
+
+
+## Data
+### Niger 2018 - 2021
+
+1. Villages
+    - 180 villages in Zinder region
+    - Elibility:
+        - Degraded land
+        - No chieftancy disputes & has own chief
+2. Households
+    - 2,861 households
+    - 670 neighoring households for spillover sample
+
+## Empirical Strategy
+### Agricultural Calendar
+
+![](assets/prez-lecture-9-241001/figure-a1.png)
+
+## Empirical Strategy
+### Treatment Assignments
+
+- 5 total treatment arms
+
+![](assets/prez-lecture-9-241001/figure-a2.png)
+
+## Empirical Strategy
+### Clustered RCT
+
+- $T$: Treatment arm $j$
+
+$$
+Y_{iv} = \alpha + \sum_{j = 1}^4 \beta_j T_v^j + \gamma X'_{i0} + \theta_v + \varepsilon_iv
+$$
+
+
+## Results 
+### Adoption Rates
+
+![](assets/prez-lecture-9-241001/figure-main-effect.jpeg)
+
+
+## Results 
+### Spillover Adoption
+
+![](assets/prez-lecture-9-241001/table-2.png)
+
+
+## Results 
+### Labor Effects
+
+![](assets/prez-lecture-9-241001/table-3.png)
+
+
+## Results 
+### Agricultural Production
+
+![](assets/prez-lecture-9-241001/table-4.png)
+
+
+## Results 
+### Land Use and Soil Quality
+
+![](assets/prez-lecture-9-241001/table-5.png)
+
+
+## Summary 
+
+- Upfront investment and information constraints are main barriers to climate adaptation adoption
+- RWH is a profitiable technology for reversing desertification and increasing agricultural extensification
+- Distinct from past literature on one-day trainings (Magruder, 2018; Macours, 2019)
+    - Extensive margin adoption: 2,000%
+
+
+
+
