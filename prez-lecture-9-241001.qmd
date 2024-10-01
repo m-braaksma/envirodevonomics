@@ -43,7 +43,6 @@ format:
 
 - Context: Niger
     - 180 villages
-    - Field experiment to produce water filtration (Kosim filter)
 - Methods: 
     - Clustered RCT at village level
     - Treatment recieved training in demi-lune construction
