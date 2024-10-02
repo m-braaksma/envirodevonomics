@@ -91,6 +91,7 @@ format:
 ## Empirical Strategy
 ### Impacts on NREGA allocations
 
+::: {style="font-size: 85%;"}
 $$
 L_{it} = \alpha_0 + \alpha_1 d_i + \alpha_2 d_i M_i + \beta M_i + X_i \phi + \epsilon_{it} \text{ for $i$ s.t. } |d_i|<h
 $$
@@ -102,6 +103,8 @@ $$
 - h is the optimal bandwidth
 - observations are weighted by their distance to the cutoff using a triangular kernel
 - standard errors are clustered by panchayat
+
+:::
 
 ## Empirical Strategy
 ### Political Impacts
