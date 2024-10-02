@@ -1,0 +1,148 @@
+---
+title: 'The Political Consequences of Resource Scarcity: Targeted Spending in a Water-Stressed Democracy'
+subtitle: Mahadevan and Shenoy
+author: 
+    name: APEC 8990
+    affiliations: Paper Presentations
+date: 10/03/2024
+date-format: long
+format: 
+    clean-revealjs:
+        embed-resources: true
+        incremental: false
+        title-slide-attributes: 
+            data-background-image: assets/UMN9_M-1line-blk.png
+            data-background-size: 25%
+            data-background-position: 4% 97%
+        html-math-method: katex
+        scrollable: true
+---
+
+
+## Motivation
+
+- Growing concern over resource scarcity:  
+    - Increasing frequency of water stress, particularly in developing countries
+    - Creates a dynamic for governments to deliver public services
+- Political Incentives:  
+    - Evidence that politicians allocate aid to politically-aligned regions
+    - Resource scarcity may create an opportunity to direct aid and consolidate power
+
+## Research Question 
+
+> *Do politicians disproportionately disburse funds to politically-aligned jurisdictions in water-stressed areas?* 
+![](assets/prez-lecture-10-241003/wb_water.jpg)
+
+
+## Overview 
+::: {style="font-size: 80%;"}
+### Context
+- West Bengal, India
+    - Local and National elections, 2013 and 2014
+    - National Rural Employment Guarantee Act (NREGA) work program for farmers during the dry season
+    - State government allocates days of NREGA labor to each gram panchayat
+
+### Findings 
+- Methods
+    - Multidimensional regression discontinuity
+- Results
+    - Water-stressed areas narrowly controlled by the ruling party’s local officials receive discontinuously more aid than equally water-stressed areas controlled by the opposition
+    - The ruling party’s national vote share is discontinuously higher in co-partisan areas
+:::
+
+<!-- ![](assets/prez-lecture-10-241003/fig2.png) -->
+
+
+
+
+## Data
+
+1. Elections
+    - 2013 Gram Panchayat election results
+    - 2014 national election results, geo-located
+
+2. NREGA
+    - 11 million 'job cards'
+        - Name, panchayat, NREGA days
+
+3. Groundwater
+    - Annual readings from 1,048 unique wells
+        - Interpolated to each poll location
+        - 'water-stressed' if the well depth is above the median
+    
+
+## Empirical Strategy
+:::: {.columns}
+::: {.column width="60%"}
+### Defining the running variable
+- West Bengal’s panchayats follow the Westminster system
+    - No single vote share determines the presidency
+- Construct a multidimensional running variable from the vote share of the ruling party across all wards in the panchayat
+
+- Identification
+    - Assume that all unobservable confounders that covary with both AITC control and the outcome are continuous in the running variable
+:::
+::: {.column width="40%"}
+### Example
+*Suppose a village council has five seats, and the ruling party wins just one while losing the others by margins of 10, 20, 30, and 40 percent. Since it would have had to have won two more seats to hold an absolute majority, the shortest 'distance' to the majority would be to flip the outcomes of the seats it lost by 10 and 20 percentage points.*
+:::
+::::
+
+## Empirical Strategy
+### Impacts on NREGA allocations
+
+$$
+L_{it} = \alpha_0 + \alpha_1 d_i + \alpha_2 d_i M_i + \beta M_i + X_i \phi + \epsilon_{it} \text{ for $i$ s.t. } |d_i|<h
+$$
+
+- $L_{it}$ is the average per-household NREGA allocation during the dry season (rabi) to panchayat $i$ in year $t = 2014,2015,2016$
+- $M_i$ is an indicator for whether the ruling party holds an absolute majority in the panchayat
+- $d_i$ is the distance to that outcome
+- $X_i$ is a vector of control variables (usually parliamentary and constituency fixed-effects)
+- h is the optimal bandwidth
+- observations are weighted by their distance to the cutoff using a triangular kernel
+- standard errors are clustered by panchayat
+
+## Empirical Strategy
+### Political Impacts
+
+$$
+V_{is} = \alpha_0 + \alpha_1 d_i + \alpha_2 d_i M_i + \beta M_i + X_i \phi + \epsilon_{is} \text{ for $i$ s.t. } |d_i|<h
+$$
+
+- $V_{is}$ be the fraction of votes cast for the ruling party’s parliamentary candidate in panchayat $i$ and polling locations relative to the candidate’s vote share in the entire parliamentary constituency
+    - 'vote lean'
+
+
+## Results 
+### Per-Household NREGA Days (Dry Season)
+
+![](assets/prez-lecture-10-241003/fig3a.png)
+
+## Results 
+### Per-Household NREGA Days (Dry Season)
+
+![](assets/prez-lecture-10-241003/table1a.png)
+
+## Results 
+### Ruling Party Vote Share
+
+![](assets/prez-lecture-10-241003/fig3b.png)
+
+## Results 
+### Ruling Party Vote Share
+
+![](assets/prez-lecture-10-241003/table1b.png)
+
+
+## Summary 
+
+- Politicians will use public funds to strategically target areas in hardship
+- In response, jurisdictions increase vote share for the ruling party
+    - Not possible to determine whether this is driven by quid pro quo or gratitude
+- Estimates robust to above/below 8m physical cutoff
+
+> Future work must explore whether forward-looking politicians distort their investments to keep voters ever vulnerable to water-scarcity and thus ever-grateful for government aid.
+
+
+
