@@ -1,0 +1,118 @@
+---
+title: 'Does the Squeaky Wheel get More Grease? The Direct and Indirect Effects of Citizen Participation on Environmental Governance in China'
+subtitle: Buntaine, Greenstone, He, Liu, Wang, and Zhang
+author: 
+    name: APEC 8990
+    affiliations: Paper Presentations
+date: 10/08/2024
+date-format: long
+format: 
+    clean-revealjs:
+        embed-resources: true
+        incremental: false
+        title-slide-attributes: 
+            data-background-image: assets/UMN9_M-1line-blk.png
+            data-background-size: 25%
+            data-background-position: 4% 97%
+        html-math-method: katex
+        scrollable: true
+---
+
+## Motivation
+
+<!-- Article: https://pubs.aeaweb.org/doi/pdfplus/10.1257/aer.20221215 -->
+
+- Popular tool to reduce pollution: reporting pollution violations
+- When firms violate pollution standards, they may face private or public appeals (compliants)
+- Public appeals are more visible to the public and the media
+
+
+## Research Question 
+
+> How do firms react to public vs. private scrutny when violating pollution standards?
+
+![](assets/prez-lecture-11-241008/polluting-firm.jpg)
+
+
+## Overview 
+
+- Context: China
+    - 24,620 firms
+- Methods: 
+    - RCT of firm assignment to private or public appeals by volunteers monitoring pollution
+- Findings:
+    - Social media drives public appeals that reduces emissions and violations
+    - Public appeals push regulators away from economic growth
+    - Reduced emissions by treated firms not offset by emissions from control firms
+
+
+## Data
+### Continuous Emissions Mointoring System (CEMS)
+
+- Hourly emissions data
+- 24,620 major polluting plants nationally (75% of total emissions)
+- Regulators recieve: 
+    - Private Appeals: non-observable complaints
+    - Public Appeals: observable complaints via social media (Weibo)
+
+
+## Data
+### China 2020
+
+1. Firms
+    - 24,620 polluting plants
+    - Daily list of verified violations
+        - 5,478 polluters
+    - Volunteers filing either private or public appeals
+        - 12,596 polluting violation appeals
+2. Government Response
+    - Track local response by officials
+    - Weibo messages & replies, 12,369 phone calls, 12,369 website replies 
+
+## Empirical Strategy
+### Experimental Design
+
+![](assets/prez-lecture-11-241008/figure-2.png)
+
+
+## Empirical Strategy
+### Clustered RCT
+
+- $T$: Treatment arm $j$
+
+$$
+Y_{ijt} = \sum_{j} \alpha_j T_{ij} \times Post_t + \gamma_i + \eta_t + \varepsilon_{ijt}
+$$
+
+
+## Results 
+### Pollution Concentration
+
+![](assets/prez-lecture-11-241008/table-3.png)
+
+
+## Results 
+### Violation Over Time
+
+![](assets/prez-lecture-11-241008/figure-3.png)
+
+
+## Results 
+### Visibility of Appeal
+
+![](assets/prez-lecture-11-241008/table-5.png)
+
+## Results 
+### General Equilibrium
+
+![](assets/prez-lecture-11-241008/figure-5.png)
+
+## Summary 
+
+- Publicly visibly violations are far more likely to be sanctioned by regulators
+- High polluting firms are unaffected by public appeals and subsequent sanctions
+- 'War on Pollution' can be effectively won through bottom-up pressure on low and middle intensity polluters
+
+
+
+
